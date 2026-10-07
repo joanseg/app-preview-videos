@@ -1,0 +1,16 @@
+node_modules
+dist
+.DS_Store
+.env
+
+# Ignore the output video from Git but not videos you import into src/.
+out
+
+# Recordings stay local: large, and they show a real account.
+public/footage/
+
+# Remotion agent skills: restore with `npx skills experimental_install` (skills-lock.json).
+.claude/skills/
+
+# Voice takes are personal recordings; keep them local.
+public/voice/
