@@ -28,7 +28,26 @@ the box** to confirm every glyph is covered.
 Recordings at a different aspect than 886:1920 (e.g. 1170 × 2532) are close enough to fit
 `cover`; set `source` in `brand.ts` so the framed screen keeps the right shape.
 
+## Redaction that doesn't show
+
+`<Redact file startAt speed boxes>` takes the same clip as the scene's `<Footage>` and, for each
+box, stretches a 4 px strip of clean surface from beside it across the box, then feathers the
+edges. Choose the strip so it holds only background for the whole scene:
+
+| Surface | `sample` | Why |
+|---|---|---|
+| Inside a card, a field, a sheet row; text with empty space to its right | `"right"` (default) | copies a column: keeps the card's top/bottom edges and vertical gradients |
+| Empty space only on the left (e.g. a value right-aligned before a "✓ Verified") | `"left"` | same, from the other side |
+| On a background that shades left→right (a mesh, a gradient page) | `"above"` or `"below"` | copies a row, so the horizontal gradient carries straight through |
+| Both neighbours are text (mid-sentence) | `"right"` with `at` = an x past the end of the line | borrows from the margin |
+
+`feather` (default 14 px) is the soft edge outside the box. Drop it to ~4 when other text sits
+within a few pixels (a subtitle under a title) — a wide feather drags clean rows over that text
+and leaves a strike-through line. Dark surfaces need nothing special; the borrowed pixels are
+already dark.
+
 ## Redaction gotchas
+- The strip must stay clean for the whole scene: if text scrolls into it, so does the copy.
 - Boxes are static. If the screen scrolls or slides while a box is up, the content moves out
   from under it. Hard-cut past the motion (two inner `<Sequence>`s), or end the box's
   `<Sequence>` before the motion starts.

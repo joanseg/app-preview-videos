@@ -7,7 +7,7 @@ Ask for it in plain words — *"make an App Store preview of the send flow from
 ~/Downloads/send.mp4, hide the email domain"* — and Claude:
 
 - maps the recording into scenes and taps, and speeds up the waits
-- covers personal data (emails, phone numbers, card details) and cuts failure screens
+- paints out personal data (emails, phone numbers, card details) with the surrounding surface, so nothing looks covered, and cuts failure screens
 - frames the app under kinetic captions in your brand's colours and font
 - adds tap rings, licensed background music and an end card with the required disclosures
 - renders App Store previews (886×1920, 15–30 s), Google Play screenshots and 9:16 social cuts

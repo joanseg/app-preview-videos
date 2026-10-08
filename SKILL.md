@@ -1,6 +1,6 @@
 ---
 name: app-preview-videos
-description: Turns phone screen recordings of an app into store-ready promo videos and screenshots — App Store app previews (886×1920, 15–30 s), Google Play promo videos and screenshots, and 9:16 social cuts — with branded kinetic captions, tap rings, blurred personal data, licensed music, an end card, optional cleaned-up voice-over, and a spec check before upload. Use this whenever someone wants App Store or Play Store previews, "app preview video", store screenshots, a demo reel or motion-graphics video of their app's screens, captions over an app recording, or asks what to record for one — even if they only say "make a video of the send flow" or "screenshots for the app submission".
+description: Turns phone screen recordings of an app into store-ready promo videos and screenshots — App Store app previews (886×1920, 15–30 s), Google Play promo videos and screenshots, and 9:16 social cuts — with branded kinetic captions, tap rings, personal data painted out so it leaves no trace, licensed music, an end card, optional cleaned-up voice-over, and a spec check before upload. Use this whenever someone wants App Store or Play Store previews, "app preview video", store screenshots, a demo reel or motion-graphics video of their app's screens, captions over an app recording, or asks what to record for one — even if they only say "make a video of the send flow" or "screenshots for the app submission".
 ---
 
 # App preview videos
@@ -60,7 +60,10 @@ not claimed. This is where previews get rejected or embarrass the owner:
 
 - **Personal data**: emails, phone numbers, names, home addresses, card details, wallet
   balances the owner doesn't want public. Cover with `<Redact>`; for an email the owner may
-  want only the domain covered so "typing an email" still reads.
+  want only the domain covered so "typing an email" still reads. `<Redact>` doesn't draw a
+  grey or frosted patch — it paints the box with the surface right beside it (a thin strip,
+  stretched, feathered), so the detail simply isn't there. A visible box tells viewers
+  something was hidden and looks unfinished; the goal is that nobody notices.
 - **Words a reviewer will reject**: profanity in an activity list, a contact name, a note.
 - **Failure states**: an error sheet, "Payment failed", a declined card. Cut before them, and
   never caption an outcome the footage doesn't show — a top-up that failed cannot end on

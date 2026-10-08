@@ -56,7 +56,7 @@ export const Screenshot: React.FC<ScreenshotProps> = ({ headline, file, at, reda
         }}
       >
         <Footage file={file} startAt={at} />
-        <Redact boxes={redact} />
+        <Redact boxes={redact} file={file} startAt={at} />
       </div>
     </AbsoluteFill>
   );

@@ -14,7 +14,9 @@ import { TapRing } from "../components/TapRing";
  * - One <TransitionSeries.Sequence> per scene; scenes join with 12-frame fades.
  * - `startAt` (seconds into the recording) and `speed` pick the stretch each scene shows.
  * - Tap rings and redaction boxes sit inside <Screen>, in full-bleed 886 × 1920 pixel
- *   or fraction coordinates measured on the recording.
+ *   or fraction coordinates measured on the recording. <Redact> takes the same file,
+ *   startAt and speed as the scene's <Footage>: it paints over the box with clean surface
+ *   borrowed from beside it, so it must play in step.
  * - A hard cut inside one scene (two inner <Sequence>s) skips an animation that would
  *   reveal something, such as a slide that drags a covered row out from under its box.
  * - A tap ring lasts as long as its <Sequence>; keep it ≤ 0.6 s and end it before a hard cut,
@@ -34,7 +36,7 @@ export const Example: React.FC = () => {
           <Screen>
             <Sequence name="Home" durationInFrames={1.2 * fps} premountFor={fps}>
               <Footage file="example.mp4" startAt={0} />
-              <Redact boxes={[{ x: 20, y: 1600, w: 520, h: 66 }]} />
+              <Redact file="example.mp4" startAt={0} boxes={[{ x: 170, y: 1610, w: 272, h: 48, feather: 4 }]} />
             </Sequence>
             <Sequence name="Next screen" from={1.2 * fps} premountFor={fps}>
               <Footage file="example.mp4" startAt={1.5} />
